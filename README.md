@@ -1,18 +1,39 @@
-# Arach Linea
+# Linea Homebrew Tap
 
-## How do I install these formulae?
+Official Homebrew tap for [Linea](https://www.uselinea.com) for Mac.
 
-`brew install arach/linea/<formula>`
+## Installation
 
-Or `brew tap arach/linea` and then `brew install <formula>`.
+Install Linea with a single command (Homebrew will tap automatically):
 
-Or, in a `brew bundle` `Brewfile`:
+```sh
+brew install --cask arach/linea/linea
+```
+
+Or tap first, then install:
+
+```sh
+brew tap arach/linea
+brew install --cask linea
+```
+
+In a `Brewfile`:
 
 ```ruby
 tap "arach/linea"
-brew "<formula>"
+cask "linea"
 ```
 
-## Documentation
+## About Linea
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+Linea is a reading workspace where text becomes audio and highlights become conversations.
+Universal binary signed and notarized by Apple for Apple Silicon and Intel Macs running macOS 14 (Sonoma) or later.
+
+- [Website](https://www.uselinea.com)
+- [Downloads](https://download.uselinea.com)
+
+To remove Linea:
+
+```sh
+brew uninstall --cask linea
+```
