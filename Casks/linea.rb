@@ -14,19 +14,20 @@ cask "linea" do
     end
   end
 
-  auto_updates true
   depends_on macos: :sonoma
+
+  preflight do
+    target = cask.config.appdir.join("Linea.app")
+    if target.exist? && !cask.installed?
+      opoo "Existing Linea.app found at #{target}; updating automagically."
+      Cask::Utils.gain_permissions_remove(target, command:)
+    end
+  end
 
   app "Linea.app"
 
   caveats <<~EOS
-    If Linea is already installed on your Mac, adopt it with:
-      brew install --cask --adopt arach/linea/linea
-
-    To force overwrite an unmanaged installation:
-      brew install --cask --force arach/linea/linea
-
-    To upgrade an existing installation:
+    To upgrade Linea in the future:
       brew upgrade --cask linea
   EOS
 
