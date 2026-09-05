@@ -10,6 +10,24 @@ Install Linea with a single command (Homebrew will tap automatically):
 brew install --cask arach/linea/linea
 ```
 
+### Upgrading Linea
+
+```sh
+brew upgrade --cask linea
+```
+
+### Already Have Linea Installed?
+
+If you previously installed Linea via direct download DMG or the web installer, Homebrew will pause by default to prevent accidental overwrite:
+
+```sh
+# To adopt your existing Linea.app under Homebrew management:
+brew install --cask --adopt arach/linea/linea
+
+# Or to force overwrite with the latest verified cask release:
+brew install --cask --force arach/linea/linea
+```
+
 Or tap first, then install:
 
 ```sh
