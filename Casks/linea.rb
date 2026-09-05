@@ -18,9 +18,13 @@ cask "linea" do
 
   preflight do
     target = cask.config.appdir.join("Linea.app")
-    if target.exist? && !cask.installed?
+    if target.exist?
       opoo "Existing Linea.app found at #{target}; updating automagically."
-      Cask::Utils.gain_permissions_remove(target, command:)
+      begin
+        FileUtils.rm_rf(target)
+      rescue
+        system_command "/bin/rm", args: ["-rf", target.to_s], sudo: true
+      end
     end
   end
 
