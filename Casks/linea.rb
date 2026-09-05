@@ -1,6 +1,6 @@
 cask "linea" do
-  version "0.5.0"
-  sha256 "46786e0c74f50fdefa44e4fcf775400a998bf9a4724aac7bcabacb0f72a003ad"
+  version "0.5.1"
+  sha256 "f5c83d72194421427e9bf40c2d213944bf1bc2d2ea7463e748380bcb1f11d2dc"
 
   url "https://download.uselinea.com/mac/versions/#{version}/Linea.dmg"
   name "Linea"
