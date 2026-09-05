@@ -19,6 +19,17 @@ cask "linea" do
 
   app "Linea.app"
 
+  caveats <<~EOS
+    If Linea is already installed on your Mac, adopt it with:
+      brew install --cask --adopt arach/linea/linea
+
+    To force overwrite an unmanaged installation:
+      brew install --cask --force arach/linea/linea
+
+    To upgrade an existing installation:
+      brew upgrade --cask linea
+  EOS
+
   zap trash: [
     "~/Library/Application Support/com.uselinea.mac",
     "~/Library/Application Support/Linea",
